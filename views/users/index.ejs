@@ -1,0 +1,74 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Users</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <h1>All Users</h1>
+    <a href="/users/create">Add Users</a> 
+     // Users.forEach( user => {  %>
+        <div>
+            <h1>// user.name %></h1>
+            <p> // user.email %></p>
+            <p> // user.age   %></p>
+
+            <a href="/users/edit/ // user._id %>" >
+                Edit
+            </a> 
+
+            <form action="/users/delete/// user._id %>?_method=DELETE" method="POST">
+                <button>Delete</button>
+            </form>
+        </div> 
+     // })  %>    
+</body>
+</html> -->
+
+<%- include('../partials/header', {title : 'All Users'}) %>
+
+<div class="page-header">
+    <h1>All Users</h1>
+
+    <a href="/users/create" class="btn">
+        Add User
+    </a>
+</div>
+
+<div class="users-grid">
+
+<% Users.forEach(user => { %>
+
+    <div class="card">
+
+        <h2><%= user.name %></h2>
+
+        <p><strong>Email:</strong> <%= user.email %></p>
+
+        <p><strong>Age:</strong> <%= user.age %></p>
+
+        <div class="actions">
+
+            <a href="/users/edit/<%= user._id %>" class="edit-btn">
+                Edit
+            </a>
+
+            <form action="/users/delete/<%= user._id %>?_method=DELETE" method="POST">
+
+                <button class="delete-btn">
+                    Delete
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+<% }) %>
+
+</div>
+
+<%- include('../partials/footer') %>
