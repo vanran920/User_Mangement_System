@@ -57,7 +57,7 @@ user-management-system/
 1. Clone the repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/vanran920/User_Mangement_System
 ```
 
 2. Navigate to the project folder
@@ -130,6 +130,9 @@ Through this project, I learned:
 * Form validation
 * Flash messages
 * Responsive UI
+
+## Live Link 
+https://user-mangement-system-ldyn.onrender.com/
 
 ## Author
 
