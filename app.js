@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express") 
 
 //Get A MongoDB
@@ -25,8 +26,10 @@ app.use(express.static(path.join(__dirname, "public")))
 //For ejs 
 app.set("view engine", "ejs")
 
+
+
 //Connection With MongoDB
-mongoose.connect("mongodb://127.0.0.1:27017/userDB")
+mongoose.connect(process.env.MONGO_URI)
 .then(() => {
     console.log("MongoDb is Connected")
 })
@@ -53,11 +56,9 @@ app.get("/", (req,res) => {
 
 
 
-const port = 3000
+const PORT = process.env.PORT || 3000
 
-app.listen(port, () => {
-    console.log("Server Is Listening at ", port)
-})   
-
-
+app.listen(PORT, () => {
+    console.log(`Server Running on ${PORT}`)
+})
 
